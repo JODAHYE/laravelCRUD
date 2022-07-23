@@ -8,13 +8,14 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                margin: 0;
             }
             
             .container {
                 width: 70%;
                 margin: 0 auto;
+                padding: 50px 0;
             }
-
             button{
                 all: unset;
                 cursor: pointer;
@@ -25,64 +26,31 @@
             }
             button:active{
                 background: #9D6CEC;
-            }
-
-            /* 게시글 리스트 */
-            .post-list{
-                width: 100%;
-            }
-            .post-list-header{
-                border: 1px solid #eee;
-            }
-            .post-item{
-                cursor: pointer;
-            }
-            .post-item:hover{
-                background: #eee;
-            }
-            .post-info{
-                border: 1px solid #eee;
-            }
-
-            /* 글 작성 */
-            #post-form{
+            }    
+            /* 헤더 */
+            #nav-menu{
+                width: 100vw;
+                height: 8vh;
                 display: flex;
-                flex-direction: column;
-                gap: 10px;
-                width: 100%;
-            }
-            #post-form input, #post-form textarea {
-                outline: none;
-                border: 1px solid #5E34A1;
-            }
-            #post-form input:focus, #post-form textarea:focus{
-                border: 1px solid #9D6CEC;
-            }
-            #post-form textarea{
-                height: 500px;
-            }
-            #post-form div{
-                display: flex;
-                justify-content: center;
-            }
-            
-            /* show 페이지 */
-            #post-show p {
-                border: 1px solid #eee;
-                padding: 4px;
+                align-items: center;
+                gap: 30px;
                 margin: 0;
+                background: #eee;
+                list-style: none;
             }
-            #list-button {
-                margin-top: 30px;
-            }
-            #post-show-content {
-                min-height: 500px;
-            }
+
+            #nav-menu a{
+                text-decoration: none;      
+                color: #000;
+                font-size: 20px;          
+            }        
         </style>
+        @yield('style')
     </head>
     <body>
+        <x-header />
         <div class='container'>
             @yield('content')
-        </div>
+        </div>        
     </body>
 </html>

@@ -3,6 +3,19 @@
 게시글 보기
 @endsection
 
+@section('style')
+<style>
+#post-show p {
+    border: 1px solid #eee;
+    padding: 4px;
+    margin: 0;
+}
+#post-show-content {
+    min-height: 500px;
+}
+</style>
+@endsection('style')
+
 @section('content')
 <h3>{{$post->title}}</h3>
 <div id='post-show-control'>
@@ -14,5 +27,5 @@
 <p>{{$post->created_at}}</p>
 <p id='post-show-content'>{{$post->content}}</p>
 </div>
-<button type='button' id='list-button'>목록</button>
+
 @endsection

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -22,13 +21,21 @@ class PostController extends Controller
 
     public function showView($id)
     {
-        $post = DB::table('posts')->where('id', $id)->first();
+        $post = Post::where('id', $id)->first();
         return view('show', ['post'=>$post,]);
     }
 
+    /* 생성 */
     public function createPost(Request $request)
     {
         Post::create($request->all());
+        return redirect()->route('post.list');
+    }
+
+    /* 삭제 */
+    public function deletePost($id)
+    {
+        Post::where('id', $id)->delete();
         return redirect()->route('post.list');
     }
 }
