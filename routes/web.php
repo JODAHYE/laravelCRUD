@@ -20,3 +20,5 @@ Route::post('/create', [PostController::class, 'createPost'])->name('post.create
 
 Route::get('/show/{id}', [PostController::class, 'showView'])->name('post.show');
 Route::delete('/delete/{id}', [PostController::class, 'deletePost'])->name('post.delete');
+
+Route::get('/update/{id}', [PostController::class, 'updateView'])->name('post.updateView');

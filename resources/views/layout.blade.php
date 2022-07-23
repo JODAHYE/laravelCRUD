@@ -35,7 +35,7 @@
                 align-items: center;
                 gap: 30px;
                 margin: 0;
-                background: #eee;
+                background: #9D6CEC;
                 list-style: none;
             }
 

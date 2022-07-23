@@ -33,9 +33,9 @@
 <form id='post-form' method='POST' action='/create'>
     @csrf
 
-    <input type='text' name='title' placeholder='제목' />
-    <input type='text' name='writer' placeholder='작성자' />
-    <textarea name='content' placeholder='내용' ></textarea>
+    <input type='text' name='title' placeholder='제목' value='{{ $post->title }}'/>
+    <input type='text' name='writer' placeholder='작성자' value='{{ $post->writer }}' />
+    <textarea name='content' placeholder='내용'>{{ $post->content }}</textarea>
     <div>
     <button type='button' onClick="location.href='/'">취소</button>
     <button type='submit'>완료</button>

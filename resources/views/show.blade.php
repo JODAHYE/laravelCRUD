@@ -19,7 +19,7 @@
 @section('content')
 <h3>{{$post->title}}</h3>
 <form id='post-show-control' action="{{ route('post.delete', $post->id) }}" method='POST'>
-    <button type='button'>수정</button>
+    <button type='button' onClick="location.href='{{ route('post.updateView', $post->id) }}'">수정</button>
     @method('DELETE')
     @csrf
     <button type='submit'>삭제</button>

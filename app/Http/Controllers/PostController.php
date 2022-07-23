@@ -25,6 +25,12 @@ class PostController extends Controller
         return view('show', ['post'=>$post,]);
     }
 
+    public function updateView($id)
+    {
+        $post = Post::where('id', $id)->first();
+        return view('update', ['post'=>$post,]);
+    }
+
     /* 생성 */
     public function createPost(Request $request)
     {
@@ -38,4 +44,5 @@ class PostController extends Controller
         Post::where('id', $id)->delete();
         return redirect()->route('post.list');
     }
+
 }
