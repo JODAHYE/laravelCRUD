@@ -18,10 +18,12 @@
 
 @section('content')
 <h3>{{$post->title}}</h3>
-<div id='post-show-control'>
+<form id='post-show-control' action="{{ route('post.delete', $post->id) }}" method='POST'>
     <button type='button'>수정</button>
-    <button type='button'>삭제</button>
-</div>
+    @method('DELETE')
+    @csrf
+    <button type='submit'>삭제</button>
+</form>
 <div id='post-show'>
 <p>작성자: {{$post->writer}}님</p>
 <p>{{$post->created_at}}</p>

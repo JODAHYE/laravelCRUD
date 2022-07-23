@@ -18,5 +18,5 @@ Route::get('/', [PostController::class, 'list'])->name('post.list');
 Route::get('/create', [PostController::class, 'createView'])->name('post.createView');
 Route::post('/create', [PostController::class, 'createPost'])->name('post.createPost');
 
-Route::get('/show/{id}', [PostController::class, 'showView'])->name('post.showView');
-Route::delete('/{id}', [PostController::class, 'deletePost'])->name('post.deletePost');
+Route::get('/show/{id}', [PostController::class, 'showView'])->name('post.show');
+Route::delete('/delete/{id}', [PostController::class, 'deletePost'])->name('post.delete');
