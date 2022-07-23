@@ -14,11 +14,12 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', [PostController::class, 'list'])->name('post.list');
+Route::get('/show/{id}', [PostController::class, 'showView'])->name('post.show');
 
 Route::get('/create', [PostController::class, 'createView'])->name('post.createView');
-Route::post('/create', [PostController::class, 'createPost'])->name('post.createPost');
-
-Route::get('/show/{id}', [PostController::class, 'showView'])->name('post.show');
-Route::delete('/delete/{id}', [PostController::class, 'deletePost'])->name('post.delete');
+Route::post('/create', [PostController::class, 'createPost'])->name('post.create');
 
 Route::get('/update/{id}', [PostController::class, 'updateView'])->name('post.updateView');
+Route::put('/update/{id}', [PostController::class, 'updatePost'])->name('post.update');
+
+Route::delete('/delete/{id}', [PostController::class, 'deletePost'])->name('post.delete');

@@ -14,15 +14,21 @@ class PostController extends Controller
         return view('list', ['posts'=>$posts,]);
     }
 
+    public function showView($id)
+    {
+        $post = Post::where('id', $id)->first();
+        return view('show', ['post'=>$post,]);
+    }
+
     public function createView()
     {
         return view('create');
     }
 
-    public function showView($id)
+    public function createPost(Request $request)
     {
-        $post = Post::where('id', $id)->first();
-        return view('show', ['post'=>$post,]);
+        Post::create($request->all());
+        return redirect()->route('post.list');
     }
 
     public function updateView($id)
@@ -31,14 +37,17 @@ class PostController extends Controller
         return view('update', ['post'=>$post,]);
     }
 
-    /* 생성 */
-    public function createPost(Request $request)
+    public function updatePost($id)
     {
-        Post::create($request->all());
-        return redirect()->route('post.list');
+        $post = Post::where('id', $id)->update([
+            'title'=>request('title'),
+            'writer'=>request('writer'),
+            'content'=>request('content')
+        ]);
+
+        return redirect('show/'.$id);
     }
 
-    /* 삭제 */
     public function deletePost($id)
     {
         Post::where('id', $id)->delete();

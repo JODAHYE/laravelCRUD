@@ -30,9 +30,9 @@
 
 @section('content')
 <h1>게시글 작성</h1>
-<form id='post-form' method='POST' action='/create'>
+<form id='post-form' method='POST' action="{{ route('post.update', $post->id) }}">
+    @method('PUT')
     @csrf
-
     <input type='text' name='title' placeholder='제목' value='{{ $post->title }}'/>
     <input type='text' name='writer' placeholder='작성자' value='{{ $post->writer }}' />
     <textarea name='content' placeholder='내용'>{{ $post->content }}</textarea>
