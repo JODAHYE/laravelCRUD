@@ -5,7 +5,9 @@
 
 @section('content')
 <h1>게시글 작성</h1>
-<form id='post-form'>
+<form id='post-form' method='POST' action='/create'>
+    @csrf
+    
     <input type='text' name='title' />
     <input type='text' name='writer' />
     <textarea name='content'></textarea>

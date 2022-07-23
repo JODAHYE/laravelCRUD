@@ -25,4 +25,10 @@ class PostController extends Controller
         $post = DB::table('posts')->where('id', $id)->first();
         return view('show', ['post'=>$post,]);
     }
+
+    public function createPost(Request $request)
+    {
+        Post::create($request->all());
+        return redirect()->route('post.list');
+    }
 }

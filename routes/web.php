@@ -16,5 +16,7 @@ use App\Http\Controllers\PostController;
 Route::get('/', [PostController::class, 'list'])->name('post.list');
 
 Route::get('/create', [PostController::class, 'createView'])->name('post.createView');
+Route::post('/create', [PostController::class, 'createPost'])->name('post.createPost');
+
 
 Route::get('/show/{id}', [PostController::class, 'showView'])->name('post.showView');
