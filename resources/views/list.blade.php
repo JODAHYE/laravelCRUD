@@ -5,6 +5,8 @@
 
 @section('content')
 <h1>게시글 리스트</h1>
+<button type='button' id='write-button'>게시글 작성하기</button>
+
 <table class='post-list'>
     <tr>
         <th class='post-list-header'>제목</th>

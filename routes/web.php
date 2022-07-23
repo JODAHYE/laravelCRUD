@@ -15,8 +15,6 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [PostController::class, 'list'])->name('post.list');
 
-// Route::get('/create', [PostController::class, 'index'])->name('post.index');
+Route::get('/create', [PostController::class, 'createView'])->name('post.createView');
 
-Route::get('/show/{id}', function(){
-    return view('show');
-});
+Route::get('/show/{id}', [PostController::class, 'showView'])->name('post.showView');

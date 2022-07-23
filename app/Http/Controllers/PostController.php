@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -14,8 +15,14 @@ class PostController extends Controller
         return view('list', ['posts'=>$posts,]);
     }
 
-    // public function index()
-    // {
-    //     return view('create');
-    // }
+    public function createView()
+    {
+        return view('create');
+    }
+
+    public function showView($id)
+    {
+        $post = DB::table('posts')->where('id', $id)->first();
+        return view('show', ['post'=>$post,]);
+    }
 }

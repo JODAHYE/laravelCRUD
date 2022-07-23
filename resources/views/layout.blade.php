@@ -11,22 +11,20 @@
             }
             
             .container {
-                position: relative;
                 width: 70%;
-                border: 1px solid #eee;
                 margin: 0 auto;
             }
 
-            #write-button {
+            button{
                 all: unset;
                 cursor: pointer;
-                background: blue;
+                background: #8555D3;
                 color: #fff;
-                padding: 2px;
                 border-radius: 4px;
-                position: absolute;
-                right: 20px;
-                top: 20px;
+                padding: 4px;
+            }
+            button:active{
+                background: #9D6CEC;
             }
 
             /* 게시글 리스트 */
@@ -47,12 +45,43 @@
             }
 
             /* 글 작성 */
+            #post-form{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+            #post-form input, #post-form textarea {
+                outline: none;
+                border: 1px solid #5E34A1;
+            }
+            #post-form input:focus, #post-form textarea:focus{
+                border: 1px solid #9D6CEC;
+            }
+            #post-form textarea{
+                height: 500px;
+            }
+            #post-form div{
+                display: flex;
+                justify-content: center;
+            }
             
+            /* show 페이지 */
+            #post-show p {
+                border: 1px solid #eee;
+                padding: 4px;
+                margin: 0;
+            }
+            #list-button {
+                margin-top: 30px;
+            }
+            #post-show-content {
+                min-height: 500px;
+            }
         </style>
     </head>
     <body>
         <div class='container'>
-            <button type='button' id='write-button'>게시글 작성하기</button>
             @yield('content')
         </div>
     </body>
