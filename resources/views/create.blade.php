@@ -14,6 +14,7 @@
 #post-form input, #post-form textarea {
     outline: none;
     border: 1px solid #5E34A1;
+    padding: 6px;
 }
 #post-form input:focus, #post-form textarea:focus{
     border: 1px solid #9D6CEC;
@@ -24,6 +25,7 @@
 #post-form div{
     display: flex;
     justify-content: center;
+    gap: 4px;
 }
 </style>
 @endsection('style')

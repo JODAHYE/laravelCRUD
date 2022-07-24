@@ -15,7 +15,10 @@ class PostController extends Controller
     }
 
     public function showView($id)
-    {
+    {   
+        if(Post::where('id', $id)->doesntExist()){
+            return redirect()->route('post.list');
+        }
         $post = Post::where('id', $id)->first();
         return view('show', ['post'=>$post,]);
     }
