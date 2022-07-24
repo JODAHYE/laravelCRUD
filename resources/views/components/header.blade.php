@@ -1,9 +1,5 @@
-<div id='header'>
-    <!-- 
-  <options=bold>“ It is not the man who has too little, but the man who craves more, that is poor. ”</>
-  <fg=gray>— Seneca</>
- -->
-  <ul id='nav-menu'>
+<div class='bg-[#9D6CEC]'>
+  <ul class='flex justify-center items-center gap-8 text-3xl py-8 text-white'>
     <li>
       <a href='/'>LIST</a>
     </li> 
