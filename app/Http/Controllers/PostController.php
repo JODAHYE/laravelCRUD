@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function list()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('id', 'desc')->get();
         // dd($posts);
         return view('list', ['posts'=>$posts,]);
     }
