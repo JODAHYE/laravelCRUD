@@ -10,7 +10,7 @@
     @csrf
     <button class='bg-indigo-300' type='submit'>삭제</button>
 </form>
-<div class='shadow-2xl border border-slate-400'>
+<div class='shadow-2xl border border-slate-400 my-4'>
 <h3 class='text-xl border-b border-slate-400 p-2'>{{$post->title}}</h3>
 <p class='border-b border-slate-400 p-2'>작성자: {{$post->writer}}님</p>
 <p class='border-b border-slate-400 p-2'>{{$post->created_at}}</p>

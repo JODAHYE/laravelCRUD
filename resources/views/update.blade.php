@@ -16,4 +16,13 @@
     <button class='bg-indigo-300' type='submit' >완료</button>
     </div>
 </form>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 @endsection

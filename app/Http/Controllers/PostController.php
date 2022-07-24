@@ -29,7 +29,13 @@ class PostController extends Controller
     }
 
     public function createPost(Request $request)
-    {
+    {   
+        $validated = $request->validate([
+            'title' => 'required',
+            'writer' => 'required',
+            'content' => 'required',
+        ]);
+
         Post::create($request->all());
         return redirect()->route('post.list');
     }
@@ -40,8 +46,14 @@ class PostController extends Controller
         return view('update', ['post'=>$post,]);
     }
 
-    public function updatePost($id)
-    {
+    public function updatePost(Request $request, $id)
+    {   
+        $validated = $request->validate([
+            'title' => 'required',
+            'writer' => 'required',
+            'content' => 'required',
+        ]);
+
         $post = Post::where('id', $id)->update([
             'title'=>request('title'),
             'writer'=>request('writer'),
