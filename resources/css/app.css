@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    button {
+        @apply shadow-lg shadow-indigo-500/50 cursor-pointer p-1 rounded hover:bg-indigo-500;
+    }
+    input, textarea {
+        @apply p-2 outline-none border border-[#52525b] focus:border-indigo-400;
+    }
+    h1 {
+        @apply text-2xl mb-9;
+    }
+    th {
+        @apply border border-slate-500;
+    }
+    td {
+        @apply border border-slate-400 p-[3px];
+    }
+}

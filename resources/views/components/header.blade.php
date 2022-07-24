@@ -1,4 +1,4 @@
-<div class='bg-[#9D6CEC]'>
+<div class='bg-indigo-500'>
   <ul class='flex justify-center items-center gap-8 text-3xl py-8 text-white'>
     <li>
       <a href='/'>LIST</a>
